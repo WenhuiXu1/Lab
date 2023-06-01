@@ -1,0 +1,22 @@
+.header-nav {
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.header-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.header-nav li {
+    padding: 0 0.5rem;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 0.5rem;
+}
