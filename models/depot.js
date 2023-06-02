@@ -9,13 +9,13 @@ const Depot = {
       .then(dbRes => dbRes.rows)
   },
 
-  // getDepotByPostcode: (postcode) => {
-  //   const sql = 'SELECT * FROM depots where id = $1'
+  findDepotByDepotId: (depot_id) => {
+    const sql = `SELECT * FROM depots WHERE depot_id = '$1'`
 
-  //   return db
-  //     .query(sql, [postcode])
-  //     .then(dbRes => dbRes.rows)
-  // } 
+    return db
+      .query(sql, [depot_id])
+      .then(dbRes => dbRes.rows)
+  }
 }
 
 module.exports = Depot 

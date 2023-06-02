@@ -9,14 +9,15 @@ router.get('/', (req, res) => {
   Depot
     .findAll()
     .then(depots => res.json(depots))
+    
 })
 
-// router.getDepots('/:postcode', (req, res) => {
-//   const postcode = req.params.postcode
+router.get('/:depot_id', (req, res) => {
+  const depotId = req.params.depotId
 
-//   Depot
-//     .getDepotByPostcode(postcode)
-//     .then(depot => res.json(depot))
-// })
+  Depot
+    .findDepotByDepotId(depotId)
+    .then(depot => res.json(depot))
+})
 
 module.exports = router

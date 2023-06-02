@@ -6,71 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/depot.css">
+    <link rel="stylesheet" href="css/forms.css">
+
+
     <script src="/js/initialize.js"></script>
-    <script defer src="/js/components/sign_up.js"></script>
-    <script defer src="/js/components/login.js"></script>
-    <script defer src="/js/components/depot_list.js"></script>
-    <script defer src="/js/components/depot_info.js"></script>
+    <script defer src="./js/components/add_comment.js"></script>
+    <script defer src="./js/components/comment_list.js"></script>
+    <script defer src="./js/components/sign_up.js"></script>
+    <script defer src="./js/components/login.js"></script>
+    <script defer src="./js/components/log_out.js"></script>
+    <script defer src="./js/components/depot_list.js"></script>
+    <script defer src="./js/components/depot_info.js"></script>
 </head>
 
 <body>
 
     <header>
-        <h1>GreenR SA</h1>
+        <section class="logo"><img src="/images/greenR_SA_logo_transparentBG.png" alt=""></section>
         <nav class="header-nav">
             <ul>
-                <li class="">Home</li>
-                <li class="">Sign Up</li>
-                <li class="">Login</li>
+                <li onClick="renderSignUp()">Sign Up</li>
+                <li onClick="renderLogin()">Log in</li>
+                <li onClick="renderLogout()">Log Out</li>
                 <li onClick="renderSearch()">Search Depots</li>
             </ul>
         </nav>
 
-
         <main id="page" class="content"></main>
+        <section id="comments" class="content"></section>
 
     </header>
-    <script>
 
-        function renderDepotList() {
-            const depotListDOM = document.querySelector('#page')
-
-            depotListDOM.innerHTML = state.depots.map(depot => `
-        <section class="depot" data-id='${depot.depot_id}>
-        <header>
-        <h2 onClick="renderDepotInfo()">${depot.depot_name}</h2>
-        </header>
-        <p>${depot.postcode}</p>
-        <p>${depot.region}</p>
-        </section>
-        `).join('')
-        }
-
-        function renderSearch() {
-            document.querySelector('#page').innerHTML = `
-            <form class="search-bar" action="" onSubmit="renderSearchResult(event)">
-          <fieldset>
-            <label for="">Postcode: </label>
-            <input type="text" name="postcode" placeholder="Please input your Postcode...">
-          </fieldset>
-            <button>Search Depots</button>
-            </form>
-            `
-        }
-
-        function renderSearchResult(event) {
-            event.preventDefault();
-            const form = event.target;
-            const data = Object.fromEntries(new FormData(form))
-            console.log(data.postcode);
-            let postcodeInput = data.postcode
-
-            state.depots = state.depots.filter(depot => depot.postcode == postcodeInput);
-            renderDepotList();
-        }
-
-    </script>
 </body>
 
 </html>

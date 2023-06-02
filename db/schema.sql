@@ -7,3 +7,10 @@ CREATE TABLE users(
   email TEXT,
   password_digest TEXT
 );
+
+CREATE TABLE comments(
+    id SERIAL PRIMARY KEY,
+    depot_id INT,
+    user_id INT,
+    comment TEXT
+);

@@ -1,0 +1,28 @@
+.search-bar {
+    width: 100%;
+}
+
+.search-bar > input, 
+.log-in > form > fieldset > input, 
+.sign-up > form > fieldset > input {
+    border: 2px solid #208b57;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.search-bar > input:focus,
+.log-in > form > fieldset > input:focus, 
+.sign-up > form > fieldset > input:focus {
+    outline: none;
+    border: 2px solid #208b57;
+}
+
+.log-in > form > fieldset,
+.sign-up > form > fieldset {
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+

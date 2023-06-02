@@ -8,6 +8,7 @@ const sessions = require('./middlewares/sessions')
 const depotsController = require('./controllers/depots_controller')
 const usersConstroller = require('./controllers/users_controller')
 const sessionsController = require('./controllers/sessions_controller')
+const commentsController = require('./controllers/comments_controller')
 
 const app = express()
 const port = process.env.PORT || 3001;
@@ -26,5 +27,6 @@ app.use(express.json())
 // middleware function to log request info in the terminal
 app.use(logger)
 app.use('/api/depots', depotsController)
-// app.use('/api/sessions', sessionsController)
-// app.use('/api/users', usersConstroller)
+app.use('/api/comments', commentsController)
+app.use('/api/sessions', sessionsController)
+app.use('/api/users', usersConstroller)
