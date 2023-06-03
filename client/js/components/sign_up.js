@@ -18,7 +18,8 @@ function renderSignUp() {
           <button>Sign Up</button>
         </form>
       </section>
-    `
+    `;
+    renderEmptyCommentList ();
   }
 
 

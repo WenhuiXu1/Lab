@@ -9,16 +9,18 @@ function renderDepotList() {
       <p>${depot.postcode}</p>
       <p>${depot.region}</p>
     </section>
-`).join('')
+`).join('');
+  renderEmptyCommentList ();
 }
 
 function renderSearch() {
   document.querySelector('#page').innerHTML = `
-  <form class="search-bar" action="" onSubmit="renderSearchResult(event)">
-    <input type="text" name="postcode" placeholder="Please input your Postcode...">
-    <button>Search Depots</button>
+  <form action="" class="search-bar" onsubmit="renderSearchResult(event)">
+  <input type="text" name="postcode" placeholder="Please input your Postcode...">
+  <button>Search Depots</button>
   </form>
-  `
+  `;
+  renderEmptyCommentList ();
 }
 
 function renderSearchResult(event) {
@@ -26,12 +28,18 @@ function renderSearchResult(event) {
   const form = event.target;
   const data = Object.fromEntries(new FormData(form))
   let postcodeInput = data.postcode
-  const filteredDepot = state.depots.filter(depot => depot.postcode == postcodeInput);
+  console.log(postcodeInput)
+  const prefix = postcodeInput.split('').slice(0, 3).join('');
 
-  const depotListDOM = document.querySelector('#page')
+  console.log(prefix)
 
-  depotListDOM.innerHTML = filteredDepot.map(depot => `
-  <section class="depot" data-id='${depot.depot_id}>
+  const filteredDepot = state.depots.filter(depot => depot.postcode.toString().split('').slice(0, 3).join('') === prefix);
+
+  console.log(filteredDepot)
+
+  const depotDOM = document.querySelector('#page')
+  depotDOM.innerHTML = filteredDepot.map(depot => `
+  <section class="depot" data-id='${depot.depot_id}'>
     <header>
       <h2 onClick="renderDepotInfo(${depot.depot_id})" >${depot.depot_name}</h2>
     </header>
@@ -39,5 +47,7 @@ function renderSearchResult(event) {
     <p>${depot.region}</p>
     <p>${depot.depot_id}</p>
   </section>
-`).join('')
+`).join('');
+  renderEmptyCommentList ();
+  console.log("This point is reached!")
 }

@@ -4,7 +4,8 @@ function renderLogout() {
         <h2>Are you sure you want to log out?</h2>
         <button onClick="logOut()">Log out</button>
       </section>
-    `
+    `;
+    renderEmptyCommentList ();
   }
   
   function logOut() {
@@ -20,5 +21,5 @@ function renderLogout() {
     } else {
     renderError(res.error)
     }
-    })
+    });
     }

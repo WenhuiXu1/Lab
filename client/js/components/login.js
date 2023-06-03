@@ -14,7 +14,8 @@ function renderLogin() {
           <button>Log in</button>
         </form>
       </section>
-    `
+    `;
+    renderEmptyCommentList ();
   }
 
   function logIn(event) {
@@ -37,7 +38,7 @@ function renderLogin() {
           state.loggedInUser = res
           renderDepotList()
         }
-      })
+      });
   }
   
   function renderError(errorMessage) {
