@@ -1,8 +1,10 @@
-function addComment (event, depot_id){
+function addComment (event, depot_Id){
     event.preventDefault()
     const form = document.querySelector(".comment-form")
     const data = Object.fromEntries(new FormData(form))
-    data[depot_id]=depot_id
+    console.log(depot_Id)
+    console.log(data)
+    data.depot_id = depot_Id
     console.log(data)
     fetch('/api/comments', {
         method: 'POST',
@@ -12,8 +14,7 @@ function addComment (event, depot_id){
         .then(res => res.json())
         .then(comment => {
             state.comments.push(comment)
-            renderCommentList();
+            renderFilteredCommentsList(depot_Id);
         });
-    
     console.log('add comment successful!')
   }

@@ -7,7 +7,8 @@ fetch('/api/depots')
     .then(res => res.json())
     .then(depots => {
         state.depots = depots
-        // renderDepotList()
+        renderDepotList();
+        loadBingMapsScript();
     })
 
 fetch('/api/sessions')
@@ -30,4 +31,5 @@ fetch('/api/comments')
   .then(comments => {
     state.comments = comments
     console.log(state.comments)
+    // renderCommentList()
   })

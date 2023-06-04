@@ -9,7 +9,7 @@ function renderSignUp() {
           </fieldset>
           <fieldset>
             <label for="">Email: </label>
-            <input type="text" name="email">
+            <input type="email" name="email">
           </fieldset>
           <fieldset>
             <label for="">Password: </label>
@@ -20,6 +20,7 @@ function renderSignUp() {
       </section>
     `;
     renderEmptyCommentList ();
+    clearMap();
   }
 
 

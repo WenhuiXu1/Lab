@@ -20,12 +20,16 @@
     <script defer src="./js/components/log_out.js"></script>
     <script defer src="./js/components/depot_list.js"></script>
     <script defer src="./js/components/depot_info.js"></script>
+    <script defer src="./js/components/get_maps.js"></script>
+    <script defer src="./js/components/bing_maps_src_loader.js"></script>
+    <script src="./js/components/homg_page.js"></script>
 </head>
 
 <body>
 
     <header>
-        <section class="logo"><img src="/images/greenR_SA_logo_transparentBG.png" alt=""></section>
+        <section class="logo"><img src="/images/greenR_SA_logo_transparentBG.png" alt="" onclick="renderDepotList()">
+        </section>
         <nav class="header-nav">
             <ul>
                 <li onClick="renderSignUp()">Sign Up</li>
@@ -37,6 +41,7 @@
 
         <main id="page" class="content"></main>
         <section id="comments" class="content"></section>
+        <section id="map" style="margin: 0 auto; max-width:600px;height:300px;"></section>
 
     </header>
 

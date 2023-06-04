@@ -16,6 +16,7 @@ function renderLogin() {
       </section>
     `;
     renderEmptyCommentList ();
+    clearMap();
   }
 
   function logIn(event) {

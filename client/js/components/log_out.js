@@ -6,6 +6,7 @@ function renderLogout() {
       </section>
     `;
     renderEmptyCommentList ();
+    clearMap();
   }
   
   function logOut() {

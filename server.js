@@ -1,5 +1,5 @@
 const express = require('express')
-
+require('dotenv').config();
 // middlewares
 const logger = require('./middlewares/logger')
 const sessions = require('./middlewares/sessions')
@@ -30,3 +30,7 @@ app.use('/api/depots', depotsController)
 app.use('/api/comments', commentsController)
 app.use('/api/sessions', sessionsController)
 app.use('/api/users', usersConstroller)
+app.get('/bingMapsKey', (req, res) => {
+    res.json(process.env.BING_MAPS_KEY);
+});
+  
