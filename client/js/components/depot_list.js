@@ -37,7 +37,7 @@ function renderSearchResult(event) {
   depotDOM.innerHTML = filteredDepot.map(depot => `
   <section class="depot" data-id='${depot.depot_id}'>
     <header>
-      <h2 onClick="renderDepotAndMapInfo(${depot.depot_id})" >${depot.depot_name}</h2>
+      <h2 onClick="renderDepotInfo(${depot.depot_id})" >${depot.depot_name}</h2>
     </header>
     <p>${depot.postcode}</p>
     <p>${depot.region}</p>
