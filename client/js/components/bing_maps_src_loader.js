@@ -22,6 +22,6 @@ function clearMap() {
     }
 
     // Clear the contents of the element with id 'map'
-    var mapElement = document.querySelector('#map');
+    var mapElement = document.querySelector('#page');
     mapElement.innerHTML = '';
 }
