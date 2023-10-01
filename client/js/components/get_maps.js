@@ -1,7 +1,7 @@
 var map, infobox;
 
 function GetMap() {
-    map = new Microsoft.Maps.Map('#page', {});
+    map = new Microsoft.Maps.Map('#map', {});
 
     // Zoom out the map.
     map.setView({ zoom: 8 });
